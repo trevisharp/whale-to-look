@@ -11,10 +11,16 @@ public class OceanBuilder
 
     public void AddOcean(OceanBuilder ocean)
         => neighboors.Add(ocean);
+
+    public void AddOceans(IEnumerable<OceanBuilder> ocean)
+        => neighboors.AddRange(ocean);
     
     public void AddSchool(FishSchool school)
         => schools.Add(school);
+
+    public void AddSchools(IEnumerable<FishSchool> school)
+        => schools.AddRange(school);
     
-    public void Build()
+    public Ocean Build()
         => Ocean = new Ocean(neighboors, schools);
 }
